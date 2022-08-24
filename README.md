@@ -16,7 +16,11 @@
 
 **注記**: GitHubのリポジトリにあるのは， *master* および *19RX* というブランチだけです。毎回のフィーチャーリリースで19R3, 19R4, 19R5…といったブランチやスナップショットが作成されるわけではありません。
 
-OAuth 2.0は，ログインメカニズムのひとつです。これを使用すれば，ユーザー名とパスワードの入力を求めずにアカウントを認証することができ，IMAP, SMTP, POP3といった**トランスポーター**を使用することができます。
+### OAuthとは
+
+OAuthは，ペーシック認証（ユーザー名とパスワードの入力を求めること）に代わるログインメカニズムのひとつです。[Exchange Web Services (EWS) ](https://docs.microsoft.com/ja-jp/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange), IMAP, SMTP, POP3など，ペーシック認証をサポートするテクノロジーはレガシーとされており，現行の[Microsoft Graph API](https://docs.microsoft.com/ja-jp/graph/overview)は全面的に[OAuth 2.0を採用しています](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/active-directory-v2-protocols)。
+
+よりもずにアカウントを認証することができ，IMAP, SMTP, POP3といった**トランスポーター**を使用することができます。
 
 Office 365のアカウントは，IMAPやSMTPでもメールを送信することができますが，アカウントのセキュリティ設定がかなり面倒です。v19 R6では，**Graph APIによる新しいメール送信**（Mail.Send）もできるようになりました。こちらも認証にはOAuth 2.0を使用しますが，SMTPを使用せずにREST APIでメールを送信する点が違っています。
 
