@@ -9,16 +9,20 @@
 
 |バージョン|備考|
 |:-:|:-:|
-|19 R3|[OAuth2Provider](https://blog.4d.com/4d-and-microsoft-365-access/)|
+|19 R3|[OAuth2Provider](https://blog.4d.com/4d-and-microsoft-365-access/), IMAP, SMTP, POP3|
 |19 R4||
 |19 R5||
-|19 R6|[Office365](https://blog.4d.com/microsoft-365-send-emails/)|
+|19 R6|[Office365](https://blog.4d.com/microsoft-365-send-emails/) Mail.Send|
 
 **注記**: GitHubのリポジトリにあるのは， *master* および *19RX* というブランチだけです。毎回のフィーチャーリリースで19R3, 19R4, 19R5…といったブランチやスナップショットが作成されるわけではありません。
 
+OAuth 2.0は，ログインメカニズムのひとつです。これを使用すれば，ユーザー名とパスワードの入力を求めずにアカウントを認証することができ，IMAP, SMTP, POP3といった**トランスポーター**を使用することができます。
+
+Office 365のアカウントは，IMAPやSMTPでもメールを送信することができますが，アカウントのセキュリティ設定がかなり面倒です。v19 R6では，Graph APIによる新しいメール送信（Mail.Send）ができるようになりました。こちらも認証にはOAuth 2.0を使用しますが，SMTPを使用せずに送信する点が違っています。
+
 #### トピック
 
-* [ソース公開されているがフリーウェアではない](https://discuss.4d.com/t/4d-netkit-custom-provider/22350)
+* [ソースは公開されているがフリーウェアではない](https://discuss.4d.com/t/4d-netkit-custom-provider/22350)
 * [Googleに接続するためにはどこを書き換えれば良いか](https://discuss.4d.com/t/newfeature-connect-your-mail-transporters-with-an-oauth-2-0-token/17349/16)
 
 #### 対応バージョン
