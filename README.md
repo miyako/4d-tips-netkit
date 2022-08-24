@@ -42,7 +42,7 @@ Office 365のアカウントは，IMAPやSMTPでもメールを送信するこ�
 
 <img width="398" alt="url" src="https://user-images.githubusercontent.com/1725068/186433291-589ceec7-617d-4739-b96c-19fa587cf8ae.png">
 
-その一方で「リダイレクトURIで`localhost`ではなくIPリテラルループバックアドレス`127.0.0.1`を使用するよう」ドキュメントは推奨しており，対策として（`http:`の場合は）「アプリケーションマニフェストで`replyUrlsWithType`属性を変更する」ことが必要，と説明されています。
+その一方で「リダイレクトURIで`localhost`ではなくIPリテラルループバックアドレス`127.0.0.1`を使用するよう」ドキュメントは推奨しており，対策として（`http:`の場合は）「[アプリケーションマニフェストで`replyUrlsWithType`属性を変更する](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/reference-app-manifest#replyurlswithtype-attribute)」ことが提案されています。
 
 
 ## トピック
