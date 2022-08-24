@@ -46,4 +46,8 @@ Office 365のアカウントは，IMAPやSMTPでもメールを送信するこ�
 
 <img width="880" alt="manifest" src="https://user-images.githubusercontent.com/1725068/186435459-e8ee401e-2022-40d5-91fd-256ce6f9c79f.png">
 
+これをせずに`localhost`設定のままIPリテラルループバックアドレス`127.0.0.1`を使用しようとすると，エラーになります。
+
+> AADSTS50011: The redirect URI 'http://127.0.0.1:50993/authorize/' specified in the request does not match the redirect URIs configured for the application 'c92bf2a4-2388-4702-b0f1-4a13ff2fe5ed'. Make sure the redirect URI sent in the request matches one added to your application in the Azure portal. Navigate to https://aka.ms/redirectUriMismatchError to learn more about how to fix this.
+
 ## トピック
