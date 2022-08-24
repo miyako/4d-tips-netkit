@@ -38,7 +38,7 @@ Office 365のアカウントは，IMAPやSMTPでもメールを送信するこ�
 
 ## 雑記
 
-リダイレクトURIは，[`https:`または`http://localhost`から始まる文字列でなければなりません](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/reply-url)。`http://127.0.0.1:50993/authorize/`と例題には記述されていますが，そのようなURLは管理画面で入力できないようになっています。
+リダイレクトURIは，[`https:`または`http://localhost`から始まる文字列でなければなりません](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/reply-url)。`http://127.0.0.1:50993/authorize/`と例題には記述されていますが，そのようなURLを登録することができないようになっています。
 
 <img width="398" alt="url" src="https://user-images.githubusercontent.com/1725068/186433291-589ceec7-617d-4739-b96c-19fa587cf8ae.png">
 
