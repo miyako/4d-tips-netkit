@@ -36,6 +36,21 @@ Office 365のアカウントは，IMAPやSMTPでもメールを送信するこ�
 * [ソースは公開されているがフリーウェアではない](https://discuss.4d.com/t/4d-netkit-custom-provider/22350)
 * [Googleに接続するためにはどこを書き換えれば良いか](https://discuss.4d.com/t/newfeature-connect-your-mail-transporters-with-an-oauth-2-0-token/17349/16)
 
+## APIアクセス許可
+
+「APIのアクセス許可」ページに移動し，アクセス許可の追加をクリックします。
+
+<img width="880" alt="a" src="https://user-images.githubusercontent.com/1725068/186438396-5af20d85-fa89-4415-970d-0fd988bb5613.png">
+
+Microsoft Graphをクリックします。
+
+<img width="880" alt="g" src="https://user-images.githubusercontent.com/1725068/186438464-79451b07-3383-407b-8e1f-4a0394b41c3e.png">
+
+「委任されたアクセス許可」をクリックします。
+
+<img width="880" alt="d" src="https://user-images.githubusercontent.com/1725068/186438546-24d1d85a-54a9-4915-af9e-e0a59b3044a8.png">
+
+
 ## 雑記
 
 リダイレクトURIは，[`https:`または`http://localhost`から始まる文字列でなければなりません](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/reply-url)。`http://127.0.0.1:50993/authorize/`と例題には記述されていますが，そのようなURLを登録することができないようになっています。
