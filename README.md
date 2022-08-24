@@ -50,6 +50,16 @@ Microsoft Graphをクリックします。
 
 <img width="880" alt="d" src="https://user-images.githubusercontent.com/1725068/186438546-24d1d85a-54a9-4915-af9e-e0a59b3044a8.png">
 
+IMAPと入力し，APIを登録します。
+
+<img width="880" alt="imap" src="https://user-images.githubusercontent.com/1725068/186439186-1405bb4a-c594-4097-a8b2-42e57cefd8cd.png">
+
+同じ要領とSMTPとPOPも登録します。
+
+<img width="880" alt="smtp" src="https://user-images.githubusercontent.com/1725068/186439305-49488d0c-391e-487f-802e-ee35066364c3.png">
+
+
+
 
 ## 雑記
 
