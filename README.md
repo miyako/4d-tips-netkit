@@ -35,3 +35,9 @@ Office 365のアカウントは，IMAPやSMTPでもメールを送信するこ�
 
 * [ソースは公開されているがフリーウェアではない](https://discuss.4d.com/t/4d-netkit-custom-provider/22350)
 * [Googleに接続するためにはどこを書き換えれば良いか](https://discuss.4d.com/t/newfeature-connect-your-mail-transporters-with-an-oauth-2-0-token/17349/16)
+
+## 雑記
+
+リダイレクト URIは，[`https:`または`http://localhost`から始まる文字列でなければなりません](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/reply-url)。`http://localhost:50993/authorize/`と記述されている例題もありますが，そのようなURLは
+
+## トピック
