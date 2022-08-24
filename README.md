@@ -7,17 +7,19 @@
 
 サードパーティ製Webサービスと連携することを支援するためのライブラリ。汎用的な設計を銘打っており，ソースコードも公開されていますが，v19 R6の時点でサポートされているプロトコルは，**OAuth 2.0 API**のみ，サポートされているサードパーティ製Webサービスは[**Microsoft Graph API**](https://docs.microsoft.com/en-us/graph/overview)のみ，となっています。
 
+|バージョン|備考|
+|:-:|:-:|
+|19 R3|[OAuth2Provider](https://blog.4d.com/4d-and-microsoft-365-access/)|
+|19 R4||
+|19 R5||
+|19 R6|[Office365](https://blog.4d.com/microsoft-365-send-emails/)|
+
+**注記**: GitHubのリポジトリにあるのは， *master* および *19RX* というブランチだけです。毎回のフィーチャーリリースで19R3, 19R4, 19R5…といったブランチやスナップショットが作成されるわけではありません。
+
 #### トピック
 
 * [ソース公開されているがフリーウェアではない](https://discuss.4d.com/t/4d-netkit-custom-provider/22350)
 * [Googleに接続するためにはどこを書き換えれば良いか](https://discuss.4d.com/t/newfeature-connect-your-mail-transporters-with-an-oauth-2-0-token/17349/16)
-
-* 19 R3 - [OAuth2Provider](https://blog.4d.com/4d-and-microsoft-365-access/)
-* 19 R4
-* 19 R5
-* 19 R6 - [Office365](https://blog.4d.com/microsoft-365-send-emails/)
-
-GitHubのリポジトリにあるのは， *master* および *19RX* というブランチだけです。毎回のフィーチャーリリースで19R3, 19R4, 19R5…といったブランチやスナップショットが作成されるわけではありません。
 
 #### 対応バージョン
 
