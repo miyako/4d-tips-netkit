@@ -20,9 +20,11 @@
 
 OAuthは，ペーシック認証（ユーザー名とパスワードの入力を求めること）に代わる**ログインの仕組み**です。[Exchange Web Services (EWS) ](https://docs.microsoft.com/ja-jp/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange), IMAP, SMTP, POP3など，ペーシック認証をサポートするテクノロジーはレガシーとされており，現行の[Microsoft Graph API](https://docs.microsoft.com/ja-jp/graph/overview)は全面的に[OAuth 2.0を採用しています](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/active-directory-v2-protocols)。
 
-よりもずにアカウントを認証することができ，IMAP, SMTP, POP3といった**トランスポーター**を使用することができます。
+OAuthでログインすると，有効期限付きの**トークン**が発行され，以後，ユーザー名とパスワードの代わりに認証トークンを使ってログインセッションを管理します。4Dの**トランスポーター**は，いずれもベーシック認証とトークン認証の両方をサポートしています（IMAP. POP3, SMTP）。
 
-Office 365のアカウントは，IMAPやSMTPでもメールを送信することができますが，アカウントのセキュリティ設定がかなり面倒です。v19 R6では，**Graph APIによる新しいメール送信**（Mail.Send）もできるようになりました。こちらも認証にはOAuth 2.0を使用しますが，SMTPを使用せずにREST APIでメールを送信する点が違っています。
+### v19R3とv19 R6のメール送信は何が違うのか
+
+v19 R3では，OAuth 2.0の認証トークンを使用し，IMAPやSMTPでメールを送信することができるようになりました。しかし，Office 365アカウントは，SMTPのセキュリティ設定がかなり面倒です。そこで，v19 R6では，**Graph APIによる新しいメール送信**（Mail.Send）のサポートが追加されました。どちらも認証にはOAuth 2.0を使用しますが，SMTPを使用せずにMicrosoft GraphのRESTful APIでメールを送信する点が違っています。
 
 ### 対応バージョン
 
