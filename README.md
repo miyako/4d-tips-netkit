@@ -3,7 +3,7 @@
 
 ## 基本情報
 
-#### [4D NetKit](https://github.com/4d/4D-NetKit)とは
+### [4D NetKit](https://github.com/4d/4D-NetKit)とは
 
 サードパーティ製Webサービスと連携することを支援するためのライブラリ。汎用的な設計を銘打っており，ソースコードも公開されていますが，v19 R6の時点でサポートされているプロトコルは，**OAuth 2.0 API**のみ，サポートされているサードパーティ製Webサービスは[**Microsoft Graph API**](https://docs.microsoft.com/en-us/graph/overview)のみ，となっています。
 
@@ -20,12 +20,12 @@ OAuth 2.0は，ログインメカニズムのひとつです。これを使用�
 
 Office 365のアカウントは，IMAPやSMTPでもメールを送信することができますが，アカウントのセキュリティ設定がかなり面倒です。v19 R6では，**Graph APIによる新しいメール送信**（Mail.Send）もできるようになりました。こちらも認証にはOAuth 2.0を使用しますが，SMTPを使用せずにREST APIでメールを送信する点が違っています。
 
-#### トピック
+### トピック
 
 * [ソースは公開されているがフリーウェアではない](https://discuss.4d.com/t/4d-netkit-custom-provider/22350)
 * [Googleに接続するためにはどこを書き換えれば良いか](https://discuss.4d.com/t/newfeature-connect-your-mail-transporters-with-an-oauth-2-0-token/17349/16)
 
-#### 対応バージョン
+### 対応バージョン
 
 **4D NetKit**は，4Dアプリの *Components* フォルダーに標準で組み込まれています。v19 LTS（19.x）には組み込まれていません。ただし，19 R5以前のバージョンであれば，フィーチャーリリースに限定された新しい機能を使用しているわけではないため，プロジェクトの *Components* フォルダーにインストールすれば，互換レベルで動作するようです。19 R6では `4D.HTTPRequest` クラスが採用され，LTSおよび19 R5以前のバージョンでは実行時にエラーが返されるようになりました。ただし，新しいコマンドを使用しているわけではなく，`4D`クラスストアの新しいプロパティをコールしているため，シンタックスチェックとコンパイルはいずれも成功します。
 
