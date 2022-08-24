@@ -41,6 +41,7 @@ v19 R3では，OAuth 2.0の認証トークンを使用し，IMAPやSMTPでメー
 
 * [ソースは公開されているがフリーウェアではない](https://discuss.4d.com/t/4d-netkit-custom-provider/22350)
 * [Googleに接続するためにはどこを書き換えれば良いか](https://discuss.4d.com/t/newfeature-connect-your-mail-transporters-with-an-oauth-2-0-token/17349/16)
+* [Gmail APIのスコープ](https://discuss.4d.com/t/oauth-2-0-uses-of-specifics-scopes-with-4ds-smtp-transporter/23744/2)
 
 ## APIアクセス許可
 
@@ -80,5 +81,3 @@ IMAPと入力し，APIを登録します。
 これをせずに`localhost`設定のままIPリテラルループバックアドレス`127.0.0.1`を使用しようとすると，エラーになります。
 
 > AADSTS50011: The redirect URI 'http://127.0.0.1:50993/authorize/' specified in the request does not match the redirect URIs configured for the application 'c92bf2a4-2388-4702-b0f1-4a13ff2fe5ed'. Make sure the redirect URI sent in the request matches one added to your application in the Azure portal. Navigate to https://aka.ms/redirectUriMismatchError to learn more about how to fix this.
-
-## トピック
