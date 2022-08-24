@@ -8,7 +8,7 @@
 サードパーティ製Webサービスと連携することを支援するためのライブラリ。汎用的な設計を銘打っており，ソースコードも公開されていますが，v19 R6の時点でサポートされているプロトコルは，**OAuth 2.0 API**のみ，サポートされているサードパーティ製Webサービスは[**Microsoft Graph API**](https://docs.microsoft.com/en-us/graph/overview)のみ，となっています。
 
 |バージョン|備考|
-|:-:|:-:|
+|:-:|:-|
 |19 R3|[OAuth2Provider](https://blog.4d.com/4d-and-microsoft-365-access/), IMAP, SMTP, POP3|
 |19 R4||
 |19 R5||
