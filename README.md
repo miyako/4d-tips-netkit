@@ -81,3 +81,8 @@ IMAPと入力し，APIを登録します。
 これをせずに`localhost`設定のままIPリテラルループバックアドレス`127.0.0.1`を使用しようとすると，エラーになります。
 
 > AADSTS50011: The redirect URI 'http://127.0.0.1:50993/authorize/' specified in the request does not match the redirect URIs configured for the application 'c92bf2a4-2388-4702-b0f1-4a13ff2fe5ed'. Make sure the redirect URI sent in the request matches one added to your application in the Azure portal. Navigate to https://aka.ms/redirectUriMismatchError to learn more about how to fix this.
+
+トークン認証に成功しても，`SmtpClientAuthentication`が無効にされているために，APIの呼び出しが拒絶されることがあります。
+
+> 5.7.139 Authentication unsuccessful, SmtpClientAuthentication is disabled for the Tenant. Visit https://aka.ms/smtp_auth_disabled for more information. [TYCP286CA0104.JPNP286.PROD.OUTLOOK.COM]
+
