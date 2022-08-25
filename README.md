@@ -84,5 +84,10 @@ IMAPと入力し，APIを登録します。
 
 トークン認証に成功しても，`SmtpClientAuthentication`が無効にされているために，APIの呼び出しが拒絶されることがあります。
 
+* smtp.k.office365.com
+
 > 5.7.139 Authentication unsuccessful, SmtpClientAuthentication is disabled for the Tenant. Visit https://aka.ms/smtp_auth_disabled for more information. [TYCP286CA0104.JPNP286.PROD.OUTLOOK.COM]
 
+* outlook.office365.com
+
+> 5.7.139 Authentication unsuccessful, SmtpClientAuthentication is disabled for the Tenant. Visit https://aka.ms/smtp_auth_disabled for more information. [ME1PR01CA0138.ausprd01.prod.outlook.com]
