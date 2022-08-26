@@ -90,7 +90,9 @@ OAuthのトークン認証をする場合，対応しているWebサービスの
 
 <img width="610" alt="4" src="https://user-images.githubusercontent.com/1725068/186811124-e52b23b2-f342-441d-80db-2752c332591b.png">
 
-* リダイレクトURI: Webプラットフォームを選択し，`http://localhost/:50993/authorize/`と入力します。この値は後からIPリテラルループバックアドレス`127.0.0.1`に書き換えます。
+* リダイレクトURI: Webプラットフォームを選択し，`http://localhost/:50993/authorize`と入力します。この値は後からIPリテラルループバックアドレス`127.0.0.1`に書き換えます。
+
+**注記**: URLの末尾にスラッシュを追加した場合，APIコールでもスラッシュを追加する必要があります。
 
 <img width="602" alt="2" src="https://user-images.githubusercontent.com/1725068/186811155-81573bd6-c76e-4759-8f95-583576e44069.png">
 
