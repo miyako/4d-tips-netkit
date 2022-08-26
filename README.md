@@ -209,6 +209,69 @@ Class constructor($name : Text)
 	End case 
 ```
 
+* SMTPで送信する場合
+
+```4d
+var $token : Object
+
+$account:="keisukemiyako@4djapan.onmicrosoft.com"
+$type:="office365"
+
+var $eOAuth2 : cs.OAuth2Entity
+var $esOAuth2 : cs.OAuth2Selection
+
+$esOAuth2:=ds.OAuth2.query("account == :1 and type == :2"; $account; $type)  //triple = because we have a wildcard
+
+If ($esOAuth2.length=0)
+	
+	$param:=cs.App.new("4D OAuth Client")
+	
+	$param.redirectURI:="http://127.0.0.1:50994/authorize"  //see explanation in the header comment
+	$param.scope:="offline_access https://outlook.office.com/SMTP.Send"  //need offline_access to obtain refresh_token
+	$oAuth2:=cs.NetKit.OAuth2Provider.new($param)
+	
+	$eOAuth2:=ds.OAuth2.new()
+	$eOAuth2.account:=$account
+	$eOAuth2.provider:=$oAuth2
+	
+Else 
+	$eOAuth2:=$esOAuth2.first()
+	$oAuth2:=$eOAuth2.provider  //contains functions and tokens
+End if 
+
+$token:=$oAuth2.getToken()
+
+If ($token#Null)
+	
+	$token.token.refreshToken:=$token.token.refresh_token
+	
+	$eOAuth2.save()  //for next time
+	
+	// Set the email's content and metadata
+	$email:=New object
+	$email.subject:="My first mail"
+	$email.from:=$account
+	$email.to:="keisuke.miyako@4D.com"
+	$email.textBody:="Test mail \r\n This is just a test e-mail \r\n Please ignore it"
+	
+	// Configure the SMTP connection
+	$parameters:=New object
+	$parameters.accessTokenOAuth2:=$token.token.access_token
+	$parameters.authenticationMode:=SMTP authentication OAUTH2
+	$parameters.host:="smtp.office365.com"
+	$parameters.user:=$account
+	$parameters.logFile:=System folder(Desktop)+"smtp.log"
+	
+	// Send the email 
+	
+	$smtp:=SMTP New transporter($parameters)
+	$statusSend:=$smtp.send($email)
+	
+Else 
+	$eOAuth2.drop()
+End if 
+```
+
 ---
 
 ## トピック
