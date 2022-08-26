@@ -165,6 +165,21 @@ IMAPと入力し，APIを登録します。
 
 4Dの**IMAP/POP3/SMTPトランスポーター**でトークン認証を使用したり，Microsoft GraphのAPIを使用してメールを送信したりするための準備ができました。
 
+## OAuth SMTP
+
+[(Archived) Authenticate to the Microsoft Graph API in signedIn mode and send an email with SMTP](https://github.com/4d/4D-NetKit#archived-authenticate-to-the-microsoft-graph-api-in-signedin-mode-and-send-an-email-with-smtp
+)の例題を使用します。
+
+#### ポイント
+
+* トークン認証を使用しているため，**ユーザー名とパスワードを管理する必要がない**。この例題では対応していませんが，実装においては，アクセストークン・リフレッシュトークン・それぞれの有効期限を管理することになります。
+
+* アクセストークンがない，あるいは有効期限を過ぎている: `OAuth2Provider.getToken()`でブラウザが表示され，ユーザーにアプリ連携の承諾を求めます。
+
+* アクセストークンがある: 保存したトークンオブジェクトを`OAuth2Provider.getToken()`をコールする**前に**`OAuth2Provider.token`プロパティにセットします。
+
+**注記**: インスタンス化した`OAuth2Provider`オブジェクトをそのままデータベースのオブジェクト型フィールドに保存することができます。プロパティはもちろんのこと，クラス関数もレコードから再現できます。その場合，保存されるのは関数名だけなので，保存時ではなく，実行時のソースコードに基づき，関数が評価されます。
+
 ---
 
 ## トピック
