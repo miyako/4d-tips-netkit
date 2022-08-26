@@ -121,7 +121,7 @@ OAuthのトークン認証をする場合，対応しているWebサービスの
 
 その一方で「リダイレクトURIで`localhost`ではなくIPリテラルループバックアドレス`127.0.0.1`を使用するよう」ドキュメントは推奨しており，対策として（`http:`の場合は）「[アプリケーションマニフェストで`replyUrlsWithType`属性を変更する](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/reference-app-manifest#replyurlswithtype-attribute)」ことが提案されています。つまり，入力画面の制約を乗り越えるため，直接，設定JSONファイルを編集します。
 
-<img width="880" alt="manifest" src="https://user-images.githubusercontent.com/1725068/186435459-e8ee401e-2022-40d5-91fd-256ce6f9c79f.png">
+<img width="634" alt="w" src="https://user-images.githubusercontent.com/1725068/186812996-2cffbf3f-d56f-42af-a4a2-a10426951045.png">
 
 これをせずに`localhost`設定のままIPリテラルループバックアドレス`127.0.0.1`を使用しようとすると，エラーになります。
 
@@ -134,12 +134,6 @@ OAuthのトークン認証をする場合，対応しているWebサービスの
 
 
 
-
-
-
-
-
-<img width="880" alt="a" src="https://user-images.githubusercontent.com/1725068/186438396-5af20d85-fa89-4415-970d-0fd988bb5613.png">
 
 Microsoft Graphをクリックします。
 
