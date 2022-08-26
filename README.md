@@ -62,6 +62,8 @@ OAuthでは，初回の認証でアクセストークンとリフレッシュト
 
 ### Microsoft Office365
 
+OAuthのトークン認証をする場合，対応しているWebサービスのサイトでアプリを登録するというステップを踏むことになります。Office365のOAuth APIを使用するのであれば，Microsoft Azureプラットフォームにアプリを登録することから始めます。
+
 ## アプリの登録
 
 [www.office.com](https://www.office.com)にログインします。
