@@ -90,7 +90,9 @@ OAuthのトークン認証をする場合，対応しているWebサービスの
 
 <img width="610" alt="4" src="https://user-images.githubusercontent.com/1725068/186811124-e52b23b2-f342-441d-80db-2752c332591b.png">
 
-* リダイレクトURI: プラットフォームを選択し，`http://127.0.0.1/:50993/authorize`と入力します。Webプラットフォームを選択した場合，`http:`プロトコルでIPリテラルループバックアドレス`127.0.0.1`を設定することはできないので，一旦，`http://localhost/:50993/authorize`と入力してから後でマニフェストを書き換えます。シングルページアプリケーションまたはデスクトップアプリケーションであれば，そのまま入力することができます。
+* プラットフォーム: 通常はWebプラットフォームを選択します。
+
+* リダイレクトURI: プラットフォームを選択し，`http://127.0.0.1/:50993/authorize`と入力します。シングルページアプリケーションまたはWebプラットフォームを選択した場合，`http:`プロトコルでIPリテラルループバックアドレス`127.0.0.1`を設定することはできないので，一旦，`http://localhost/:50993/authorize`と入力してから後でマニフェストを書き換えます。デスクトップアプリケーション（パブリッククライアント）であれば，そのまま入力することができます。ただし，パブリッククライアントとNetKitはあまり相性が良くないようです。
 
 **注記**: URLの末尾にスラッシュを追加した場合，APIを呼び出すときもスラッシュを省略せずに追加する必要があります。
 
@@ -123,7 +125,7 @@ OAuthのトークン認証をする場合，対応しているWebサービスの
 
 #### リダイレクトURI
 
-リダイレクトURIは，[`https:`または`http://localhost`から始まる文字列でなければなりません](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/reply-url)。`http://127.0.0.1:50993/authorize/`と例題には記述されていますが，そのようなURLを登録することができないようになっています。
+リダイレクトURIは，[`https:`または`http://localhost`から始まる文字列でなければなりません](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/reply-url)。`http://127.0.0.1:50993/authorize/`と例題には記述されていますが，Webプラットフォームの場合，そのようなURLを登録することができないようになっています。
 
 <img width="398" alt="url" src="https://user-images.githubusercontent.com/1725068/186433291-589ceec7-617d-4739-b96c-19fa587cf8ae.png">
 
