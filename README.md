@@ -338,6 +338,10 @@ Else
 End if 
 ```
 
+**参考**: どうしても認証に失敗し，APIのアクセス許可が適正であるように思えるのに下記のエラーる場合，アプリケーションを削除してやり直すと問題が解決することがあります。
+
+> Authorization Request Denied. Insufficient privileges to complete the operation.
+
 ---
 
 ## トピック
