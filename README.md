@@ -76,7 +76,7 @@ OAuthのトークン認証をする場合，対応しているWebサービスの
 
 サイドバーから「アプリの登録」を選択します。
 
-<img width="634" alt="4" src="https://user-images.githubusercontent.com/1725068/186809375-e28d9ba8-2407-4cbb-9b77-9db57947d48a.png">
+<img width="634" alt="5" src="https://user-images.githubusercontent.com/1725068/186810015-2f1d0b71-9192-4378-9b62-72e13b514676.png">
 
 
 
