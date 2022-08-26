@@ -147,7 +147,7 @@ OAuth 2.0の認証システムは，プラットフォームのAPI全般に共�
 
 <img width="634" alt="access" src="https://user-images.githubusercontent.com/1725068/186814265-0534c143-6f41-4441-9f58-afd26bd34642.png">
 
-デフォルトで`User.Read`というスコープが設定されています。これがなければ，そもそもOAuthで認証ができません。
+デフォルトで`User.Read`というスコープが設定されています。
 
 アクセス許可を追加し，Microsoft Graphを選択します。
 
