@@ -186,6 +186,29 @@ IMAPと入力し，APIを登録します。
 
 **注記**: インスタンス化した`OAuth2Provider`オブジェクトをそのままデータベースのオブジェクト型フィールドに保存することができます。プロパティはもちろんのこと，クラス関数もレコードから再現できます。その場合，保存されるのは関数名だけなので，保存時ではなく，実行時のソースコードに基づき，関数が評価されます。
 
+トークンを管理するためのテーブルを作成します。
+
+<img width="150" alt="table" src="https://user-images.githubusercontent.com/1725068/186934010-48d08775-4648-4927-92c8-ab58d59ee812.png">
+
+認証情報を管理するためのクラスを作成します。
+
+```4d
+Class constructor($name : Text)
+	
+	Case of 
+		: ($name="4D OAuth Client")
+			
+			This.name:="Microsoft"
+			This.clientId:="…"
+			This.clientSecret:="…"
+			This.redirectURI:="http://127.0.0.1:50993/authorize"
+			This.permission:="signedIn"
+			This.scope:=New collection("https://graph.microsoft.com/.default")
+			This.scope.unshift("offline_access")
+			
+	End case 
+```
+
 ---
 
 ## トピック
