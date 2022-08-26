@@ -54,9 +54,23 @@ OAuthでは，初回の認証でアクセストークンとリフレッシュト
 
 コンポーネントはプロジェクトモードで開発されており，`cs.NetKit`名前空間でクラスが公開されています。バイナリモードのホストからでもインスタンス化できるように`New OAuth2 provider` `New Office365 provider`という共有プロジェクトメソッドが用意されています。
 
-## エラーハンドリング
+### エラーハンドリング
 
 4D NetKitは，`_4D THROW ERROR`という内部コマンドをエラー処理の中で使用しています。このコマンドの使い方はドキュメントに説明されていませんが，コンポーネント内で呼び出された場合，標準のエラーをホストに「投げる」効果があるようです。
+
+---
+
+### Microsoft Office365
+
+## 
+
+[www.office.com](https://www.office.com)にログインします。
+
+[portal.azure.com](https://portal.azure.com/#home)にアクセスします。
+
+**Azure Active Directoryの管理**に移動します（ビュー）。
+
+
 
 
 ## APIアクセス許可
