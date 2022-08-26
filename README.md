@@ -28,9 +28,9 @@ v19 R3では，OAuth 2.0の認証トークンを取得し，IMAPやSMTPでメー
 
 ### Office 365アカウントの設定
 
-Office 365アカウントでSMTPを使用するためには，管理者アカウントでログインし，**認証済みSMTP (`SMTP AUTH`)**を有効に設定する必要があります。
+Office 365アカウントでSMTPを使用するためには，管理者アカウントでログインし，**認証済みSMTP**を有効に設定する必要があります。
 
-SMTPが許可されていない場合，トークン認証には成功しても，`SmtpClientAuthentication`が無効にされているために，APIの呼び出しが不成功に終わります。
+`SMTP AUTH`が許可されていない場合，トークン認証には成功しても，`SmtpClientAuthentication`が無効にされているために，APIの呼び出しが不成功に終わります。
 
 > 5.7.139 Authentication unsuccessful, SmtpClientAuthentication is disabled for the Tenant. Visit https://aka.ms/smtp_auth_disabled for more information. [TYCP286CA0104.JPNP286.PROD.OUTLOOK.COM]
 
@@ -160,6 +160,8 @@ IMAPと入力し，APIを登録します。
 <img width="634" alt="mail" src="https://user-images.githubusercontent.com/1725068/186816274-613379ae-c813-4b83-a783-512f66a0f92d.png">
 
 <img width="634" alt="スクリーンショット 2022-08-26 13 02 38" src="https://user-images.githubusercontent.com/1725068/186816679-6c6a6517-fd45-4472-8283-17b53452abc6.png">
+
+4Dの**IMAP/POP3/SMTPトランスポーター**でトークン認証を使用したり，Microsoft GraphのAPIを使用してメールを送信したりするための準備ができました。
 
 ---
 
