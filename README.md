@@ -115,41 +115,51 @@ OAuthのトークン認証をする場合，対応しているWebサービスの
 
 マニフェストにはアプリの完全な仕様はJSON形式で記述されています。ポータル画面を操作する代わりに直接マニフェストを編集することができます。
 
+リダイレクトURLを書き換えてから「保存」ボタンをクリックします。
+
+<img width="634" alt="w" src="https://user-images.githubusercontent.com/1725068/186812996-2cffbf3f-d56f-42af-a4a2-a10426951045.png">
+
+#### リダイレクトURI
+
 リダイレクトURIは，[`https:`または`http://localhost`から始まる文字列でなければなりません](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/reply-url)。`http://127.0.0.1:50993/authorize/`と例題には記述されていますが，そのようなURLを登録することができないようになっています。
 
 <img width="398" alt="url" src="https://user-images.githubusercontent.com/1725068/186433291-589ceec7-617d-4739-b96c-19fa587cf8ae.png">
 
-その一方で「リダイレクトURIで`localhost`ではなくIPリテラルループバックアドレス`127.0.0.1`を使用するよう」ドキュメントは推奨しており，対策として（`http:`の場合は）「[アプリケーションマニフェストで`replyUrlsWithType`属性を変更する](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/reference-app-manifest#replyurlswithtype-attribute)」ことが提案されています。つまり，入力画面の制約を乗り越えるため，直接，設定JSONファイルを編集します。
-
-<img width="634" alt="w" src="https://user-images.githubusercontent.com/1725068/186812996-2cffbf3f-d56f-42af-a4a2-a10426951045.png">
+その一方で「リダイレクトURIで`localhost`ではなくIPリテラルループバックアドレス`127.0.0.1`を使用するよう」ドキュメントは推奨しており，対策として（`http:`の場合は）「[アプリケーションマニフェストで`replyUrlsWithType`属性を変更する](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/reference-app-manifest#replyurlswithtype-attribute)」ことが提案されています。つまり，入力画面の制約を乗り越えるため，直接，設定JSONファイルを編集する必要があります。
 
 これをせずに`localhost`設定のままIPリテラルループバックアドレス`127.0.0.1`を使用しようとすると，エラーになります。
 
 > AADSTS50011: The redirect URI 'http://127.0.0.1:50993/authorize/' specified in the request does not match the redirect URIs configured for the application 'c92bf2a4-2388-4702-b0f1-4a13ff2fe5ed'. Make sure the redirect URI sent in the request matches one added to your application in the Azure portal. Navigate to https://aka.ms/redirectUriMismatchError to learn more about how to fix this.
 
+### APIのアクセス許可
+
+OAuth 2.0の認証システムは，プラットフォームのAPI全般に共通ですが，**スコープ**の外にあるAPIは利用できないことになっています。スコープは，サービス名・アプリケーション名・読み書き・リソースの種類などの区分で定義されており，権限が設定できるようになっています。
+
 サイドバーから「APIのアクセス許可」を選択します。
 
+<img width="634" alt="access" src="https://user-images.githubusercontent.com/1725068/186814265-0534c143-6f41-4441-9f58-afd26bd34642.png">
 
+デフォルトで`User.Read`というスコープが設定されています。これがなければ，そもそもOAuthで認証ができません。
 
+アクセス許可を追加し，Microsoft Graphを選択します。
 
-
-
-
-Microsoft Graphをクリックします。
-
-<img width="880" alt="g" src="https://user-images.githubusercontent.com/1725068/186438464-79451b07-3383-407b-8e1f-4a0394b41c3e.png">
+<img width="634" alt="graph" src="https://user-images.githubusercontent.com/1725068/186814362-b59bc4a7-e0ae-4367-ad41-adff7918dc09.png">
 
 「委任されたアクセス許可」をクリックします。
 
-<img width="880" alt="d" src="https://user-images.githubusercontent.com/1725068/186438546-24d1d85a-54a9-4915-af9e-e0a59b3044a8.png">
+<img width="634" alt="スクリーンショット 2022-08-26 12 57 59" src="https://user-images.githubusercontent.com/1725068/186814505-cee00e38-d8f4-41a3-b568-8da0323f0731.png">
 
 IMAPと入力し，APIを登録します。
 
-<img width="880" alt="imap" src="https://user-images.githubusercontent.com/1725068/186439186-1405bb4a-c594-4097-a8b2-42e57cefd8cd.png">
+<img width="634" alt="スクリーンショット 2022-08-26 12 58 42" src="https://user-images.githubusercontent.com/1725068/186814892-20d9dde4-4a08-4833-a7f1-34760a14ce4d.png">
 
 同じ要領とSMTPとPOPも登録します。
 
-<img width="880" alt="smtp" src="https://user-images.githubusercontent.com/1725068/186439305-49488d0c-391e-487f-802e-ee35066364c3.png">
+SMTPの代わりにメール送信APIを使用するのであれば，Mailも登録します。
+
+<img width="634" alt="mail" src="https://user-images.githubusercontent.com/1725068/186816274-613379ae-c813-4b83-a783-512f66a0f92d.png">
+
+<img width="634" alt="スクリーンショット 2022-08-26 13 02 38" src="https://user-images.githubusercontent.com/1725068/186816679-6c6a6517-fd45-4472-8283-17b53452abc6.png">
 
 ---
 
