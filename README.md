@@ -78,6 +78,24 @@ OAuthのトークン認証をする場合，対応しているWebサービスの
 
 <img width="634" alt="5" src="https://user-images.githubusercontent.com/1725068/186810015-2f1d0b71-9192-4378-9b62-72e13b514676.png">
 
+「新規登録」ボタンをクリックします。
+
+<img width="634" alt="1" src="https://user-images.githubusercontent.com/1725068/186811065-25cc7ecb-75d6-4367-8f5b-c1144f96a4f8.png">
+
+* 名前: 認証画面などのメッセージに表示されるアプリケーション名を入力します。
+
+<img width="611" alt="3" src="https://user-images.githubusercontent.com/1725068/186811085-789fe5ef-0aad-49bc-8f67-fcf087758b5f.png">
+
+* サポートされているアカウントの種類: 対象ユーザーの条件を決定します。
+
+<img width="610" alt="4" src="https://user-images.githubusercontent.com/1725068/186811124-e52b23b2-f342-441d-80db-2752c332591b.png">
+
+* リダイレクトURI: Webプラットフォームを選択し，`http://localhost/:50993/authorize/`と入力します。この値は後からIPリテラルループバックアドレス`127.0.0.1`に書き換えます。
+
+<img width="602" alt="2" src="https://user-images.githubusercontent.com/1725068/186811155-81573bd6-c76e-4759-8f95-583576e44069.png">
+
+「登録」ボタンをクリックします。
+
 
 
 ## APIアクセス許可
