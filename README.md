@@ -338,6 +338,14 @@ Else
 End if 
 ```
 
+初回はアプリ連携の承諾をユーザーに求めるためにブラウザが起動します。
+
+<img width="426" alt="auth" src="https://user-images.githubusercontent.com/1725068/186937808-d9f44b97-7b64-49bb-bd1e-7c832ca11bf3.png">
+
+連携を承諾するとリダイレクトURLにページが移動します。
+
+<img width="574" alt="accept" src="https://user-images.githubusercontent.com/1725068/186937911-234ce7df-d93c-467f-9496-a375c44ed174.png">
+
 **参考**: どうしても認証に失敗し，APIのアクセス許可が適正であるように思えるのに下記のエラーる場合，アプリケーションを削除してやり直すと問題が解決することがあります。
 
 > Authorization Request Denied. Insufficient privileges to complete the operation.
