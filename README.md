@@ -171,10 +171,7 @@ IMAPと入力し，APIを登録します。
 
 4Dの**IMAP/POP3/SMTPトランスポーター**でトークン認証を使用したり，Microsoft GraphのAPIを使用してメールを送信したりするための準備ができました。
 
-## OAuth SMTP
-
-[(Archived) Authenticate to the Microsoft Graph API in signedIn mode and send an email with SMTP](https://github.com/4d/4D-NetKit#archived-authenticate-to-the-microsoft-graph-api-in-signedin-mode-and-send-an-email-with-smtp
-)の例題を使用します。
+## OAuthでメール送信
 
 #### ポイント
 
@@ -209,7 +206,10 @@ Class constructor($name : Text)
 	End case 
 ```
 
-* SMTPで送信する場合
+## OAuth SMTP
+
+[(Archived) Authenticate to the Microsoft Graph API in signedIn mode and send an email with SMTP](https://github.com/4d/4D-NetKit#archived-authenticate-to-the-microsoft-graph-api-in-signedin-mode-and-send-an-email-with-smtp
+)の例題を使用します。
 
 ```4d
 var $token : Object
@@ -269,6 +269,72 @@ If ($token#Null)
 	
 Else 
 	$eOAuth2.drop()
+End if 
+```
+
+## OAuth Mail Send
+
+[Office365](https://github.com/4d/4D-NetKit#office365
+)の例題を使用します。
+
+```4d
+var $token : Object
+
+$account:="keisukemiyako@4djapan.onmicrosoft.com"
+$type:="office365"
+
+var $eOAuth2 : cs.OAuth2Entity
+var $esOAuth2 : cs.OAuth2Selection
+
+$esOAuth2:=ds.OAuth2.query("account == :1 and type == :2"; $account; $type)  //triple = because we have a wildcard
+
+If ($esOAuth2.length=0)
+	
+	$param:=cs.App.new("4D OAuth Client")
+	
+	$oAuth2:=cs.NetKit.OAuth2Provider.new($param)
+	
+	$eOAuth2:=ds.OAuth2.new()
+	$eOAuth2.account:=$account
+	$eOAuth2.type:=$type
+	$eOAuth2.provider:=$oAuth2
+	
+Else 
+	$eOAuth2:=$esOAuth2.first()
+	$oAuth2:=$eOAuth2.provider  //contains functions and tokens
+End if 
+
+$token:=$oAuth2.getToken()
+
+If ($token#Null)
+	
+	$token.token.refreshToken:=$token.token.refresh_token
+	
+	$eOAuth2.save()  //for next time
+	
+	$office365:=cs.NetKit.Office365.new($oAuth2; New object("mailType"; "JMAP"))
+	
+	$user:=$office365.user.getCurrent()
+	
+	If ($user#Null)
+		
+		$email:=New object
+		$email.from:=$user.mail
+		$email.sender:=$user.mail
+		$email.subject:="My first mail"
+		$email.textBody:="Test mail \r\n This is just a test e-mail \r\n Please ignore it"
+		$email.htmlBody:="<html><body><h1>Test email </h1> This is just a test email <br /> Please ignore it</body></html>"
+		$email.to:="keisuke.miyako@4D.com"
+		
+		// Send the email 
+		
+		$status:=$office365.mail.send($email)
+		
+	End if 
+	
+Else 
+	$eOAuth2:=$esOAuth2.first()
+	$oAuth2:=$eOAuth2.provider  //contains functions and tokens
 End if 
 ```
 
