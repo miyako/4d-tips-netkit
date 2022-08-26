@@ -86,9 +86,13 @@ OAuthのトークン認証をする場合，対応しているWebサービスの
 
 <img width="611" alt="3" src="https://user-images.githubusercontent.com/1725068/186811085-789fe5ef-0aad-49bc-8f67-fcf087758b5f.png">
 
-* サポートされているアカウントの種類: 対象ユーザーの条件を決定します。
+* サポートされているアカウントの種類: 対象ユーザーを「すべてのMicrosoftアカウントユーザー」に設定します。
 
 <img width="610" alt="4" src="https://user-images.githubusercontent.com/1725068/186811124-e52b23b2-f342-441d-80db-2752c332591b.png">
+
+**注記**: 対象ユーザーを個人用のMicrosoft アカウントユーザー（`PersonalMicrosoftAccount`）に設定するとエラーが返されます。
+
+> AADSTS9002331: Application 'a035cd95-0c13-4b9f-a2b0-64b69c44fed5'(TEST) is configured for use by Microsoft Account users only. Please use the /consumers endpoint to serve this request.
 
 * プラットフォーム: 通常はWebプラットフォームを選択します。シングルページアプリケーションを選択すると認証エラーになります。
 
@@ -349,6 +353,14 @@ End if
 **参考**: どうしても認証に失敗し，APIのアクセス許可が適正であるように思えるのに下記のエラーる場合，アプリケーションを削除してやり直すと問題が解決することがあります。
 
 > Authorization Request Denied. Insufficient privileges to complete the operation.
+
+## Gmail
+
+4D NetKitはOffice365に特化されたコンポーネントですが，OAuth 2.0は共通の仕様なので，コードを少し書き換えることで他社のサービスにも対応することができます。
+
+4D純正コンポーネントを改造する場合，ライセンス公開の規約により，別名でコンポーネントを公開する必要があります。オリジナルのコンポーネントをアンインストールすることはできないので，クラスの名前空間も`NetKit`とは別のものにしなけれななりません。
+
+コンポーネントのWebサーバーを開始した場合，ローカルホストのリスナーソケットはWebサーバーを終了した後もコンポーネントに占有されたままになるため，他のコンポーネントで同じポート番号を使用することはできません。4D NetKitのHTTPサーバーは，リダイレクトURLのポート番号または`50993`を使用します。オリジナルとカスタム版のNetKitを併用する場合，それぞれのコンポーネントに渡すリダイレクトURLのポーと番号を別々にすると良いでしょう。Microsoft Graph APIは，プラットフォームをWebに指定した場合，リダイレクトURLのポーと番号をチェックしない仕様になっているため，設定とは違うポート番号でもリダイレクトURLを処理することができます。
 
 ---
 
