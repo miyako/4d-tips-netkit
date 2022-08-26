@@ -96,11 +96,48 @@ OAuthのトークン認証をする場合，対応しているWebサービスの
 
 「登録」ボタンをクリックします。
 
+サマリー画面が表示されるので，下記の項目を書き留めます。
+
+* アプリケーション (クライアント) ID
+* ディレクトリ (テナント) ID
+
+「証明書またはシークレットの追加」をクリックし，新しいクライアントシークレットを発行します。
+
+<img width="560" alt="a" src="https://user-images.githubusercontent.com/1725068/186812161-d69e9131-ef55-4351-86c6-e38be76aab61.png">
+
+この画面に再度アクセスしたときには表示されないので，ここで**必ず**「値」を書き留めます。
+
+<img width="634" alt="b" src="https://user-images.githubusercontent.com/1725068/186812259-e1fd6dac-a6b8-4c32-ba40-0cb5668de111.png">
+
+サイドバーから「マニフェスト」を選択します。
+
+<img width="634" alt="m" src="https://user-images.githubusercontent.com/1725068/186812493-7dfdd872-8dcc-4163-ae35-57a9adcc3a96.png">
+
+マニフェストにはアプリの完全な仕様はJSON形式で記述されています。ポータル画面を操作する代わりに直接マニフェストを編集することができます。
+
+リダイレクトURIは，[`https:`または`http://localhost`から始まる文字列でなければなりません](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/reply-url)。`http://127.0.0.1:50993/authorize/`と例題には記述されていますが，そのようなURLを登録することができないようになっています。
+
+<img width="398" alt="url" src="https://user-images.githubusercontent.com/1725068/186433291-589ceec7-617d-4739-b96c-19fa587cf8ae.png">
+
+その一方で「リダイレクトURIで`localhost`ではなくIPリテラルループバックアドレス`127.0.0.1`を使用するよう」ドキュメントは推奨しており，対策として（`http:`の場合は）「[アプリケーションマニフェストで`replyUrlsWithType`属性を変更する](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/reference-app-manifest#replyurlswithtype-attribute)」ことが提案されています。つまり，入力画面の制約を乗り越えるため，直接，設定JSONファイルを編集します。
+
+<img width="880" alt="manifest" src="https://user-images.githubusercontent.com/1725068/186435459-e8ee401e-2022-40d5-91fd-256ce6f9c79f.png">
+
+これをせずに`localhost`設定のままIPリテラルループバックアドレス`127.0.0.1`を使用しようとすると，エラーになります。
+
+> AADSTS50011: The redirect URI 'http://127.0.0.1:50993/authorize/' specified in the request does not match the redirect URIs configured for the application 'c92bf2a4-2388-4702-b0f1-4a13ff2fe5ed'. Make sure the redirect URI sent in the request matches one added to your application in the Azure portal. Navigate to https://aka.ms/redirectUriMismatchError to learn more about how to fix this.
+
+サイドバーから「APIのアクセス許可」を選択します。
 
 
-## APIアクセス許可
 
-「APIのアクセス許可」ページに移動し，アクセス許可の追加をクリックします。
+
+
+
+
+
+
+
 
 <img width="880" alt="a" src="https://user-images.githubusercontent.com/1725068/186438396-5af20d85-fa89-4415-970d-0fd988bb5613.png">
 
@@ -119,23 +156,6 @@ IMAPと入力し，APIを登録します。
 同じ要領とSMTPとPOPも登録します。
 
 <img width="880" alt="smtp" src="https://user-images.githubusercontent.com/1725068/186439305-49488d0c-391e-487f-802e-ee35066364c3.png">
-
-
-
-
-## 雑記
-
-リダイレクトURIは，[`https:`または`http://localhost`から始まる文字列でなければなりません](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/reply-url)。`http://127.0.0.1:50993/authorize/`と例題には記述されていますが，そのようなURLを登録することができないようになっています。
-
-<img width="398" alt="url" src="https://user-images.githubusercontent.com/1725068/186433291-589ceec7-617d-4739-b96c-19fa587cf8ae.png">
-
-その一方で「リダイレクトURIで`localhost`ではなくIPリテラルループバックアドレス`127.0.0.1`を使用するよう」ドキュメントは推奨しており，対策として（`http:`の場合は）「[アプリケーションマニフェストで`replyUrlsWithType`属性を変更する](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/reference-app-manifest#replyurlswithtype-attribute)」ことが提案されています。つまり，入力画面の制約を乗り越えるため，直接，設定JSONファイルを編集します。
-
-<img width="880" alt="manifest" src="https://user-images.githubusercontent.com/1725068/186435459-e8ee401e-2022-40d5-91fd-256ce6f9c79f.png">
-
-これをせずに`localhost`設定のままIPリテラルループバックアドレス`127.0.0.1`を使用しようとすると，エラーになります。
-
-> AADSTS50011: The redirect URI 'http://127.0.0.1:50993/authorize/' specified in the request does not match the redirect URIs configured for the application 'c92bf2a4-2388-4702-b0f1-4a13ff2fe5ed'. Make sure the redirect URI sent in the request matches one added to your application in the Azure portal. Navigate to https://aka.ms/redirectUriMismatchError to learn more about how to fix this.
 
 ---
 
