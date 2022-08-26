@@ -62,14 +62,21 @@ OAuthでは，初回の認証でアクセストークンとリフレッシュト
 
 ### Microsoft Office365
 
-## 
+## アプリの登録
 
 [www.office.com](https://www.office.com)にログインします。
 
-[portal.azure.com](https://portal.azure.com/#home)にアクセスします。
+<img width="634" alt="1" src="https://user-images.githubusercontent.com/1725068/186809085-1cd0806d-aeb9-437d-93ee-d2f7539f3722.png">
 
-**Azure Active Directoryの管理**に移動します（ビュー）。
+[portal.azure.com](https://portal.azure.com/#home)にアクセスし，**Azure Active Directoryの管理**の「ビュー」ボタンをクリックします。
 
+<img width="634" alt="2" src="https://user-images.githubusercontent.com/1725068/186809093-31374c2e-af1f-4915-887f-60508a40256d.png">
+
+<img width="634" alt="3" src="https://user-images.githubusercontent.com/1725068/186809401-8e29cc1f-fa93-47b8-98a7-dd1b01ec9e3b.png">
+
+サイドバーから「アプリの登録」を選択します。
+
+<img width="634" alt="4" src="https://user-images.githubusercontent.com/1725068/186809375-e28d9ba8-2407-4cbb-9b77-9db57947d48a.png">
 
 
 
