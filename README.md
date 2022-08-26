@@ -155,7 +155,7 @@ IMAPと入力し，APIを登録します。
 
 同じ要領とSMTPとPOPも登録します。
 
-SMTPの代わりにメール送信APIを使用するのであれば，Mailも登録します。
+[Office365のアカウント設定](#office-365アカウントの設定)が必要なSMTPの代わりにメール送信APIを使用するのであれば，Mailも登録します。
 
 <img width="634" alt="mail" src="https://user-images.githubusercontent.com/1725068/186816274-613379ae-c813-4b83-a783-512f66a0f92d.png">
 
