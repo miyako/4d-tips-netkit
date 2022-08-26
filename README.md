@@ -362,7 +362,7 @@ End if
 
 コンポーネントのWebサーバーを開始した場合，ローカルホストのリスナーソケットはWebサーバーを終了した後もコンポーネントに占有されたままになるため，他のコンポーネントで同じポート番号を使用することはできません。4D NetKitのHTTPサーバーは，リダイレクトURLのポート番号または`50993`を使用します。オリジナルとカスタム版のNetKitを併用する場合，それぞれのコンポーネントに渡すリダイレクトURLのポーと番号を別々にすると良いでしょう。Microsoft Graph APIは，プラットフォームをWebに指定した場合，リダイレクトURLのポーと番号をチェックしない仕様になっているため，設定とは違うポート番号でもリダイレクトURLを処理することができます。
 
-しかしながらOAuthのSMTP APIはセキュリティのチェックが厳しく，[Googleの検証プロセス](https://support.google.com/cloud/answer/7454865)に合格するまで別ドメインのアカウントとのアプリの連携はブロックされます。
+しかしながらOAuthのSMTP APIはセキュリティのチェックが厳しく，[Googleの検証プロセス](https://support.google.com/cloud/answer/7454865)に合格するまでアプリの連携はブロックされます。
 
 <img width="629" alt="gerror" src="https://user-images.githubusercontent.com/1725068/186941720-ed27c542-56eb-4a76-a59a-bde6b49eeed2.png">
 
