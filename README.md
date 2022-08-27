@@ -236,6 +236,7 @@ If ($esOAuth2.length=0)
 	
 	$eOAuth2:=ds.OAuth2.new()
 	$eOAuth2.account:=$account
+	$eOAuth2.type:=$type
 	$eOAuth2.provider:=$oAuth2
 	
 Else 
