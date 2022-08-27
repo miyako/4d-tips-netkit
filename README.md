@@ -362,6 +362,12 @@ End if
 
 コンポーネントのWebサーバーを開始した場合，ローカルホストのリスナーソケットはWebサーバーを終了した後もコンポーネントに占有されたままになるため，他のコンポーネントで同じポート番号を使用することはできません。4D NetKitのHTTPサーバーは，リダイレクトURLのポート番号または`50993`を使用します。オリジナルとカスタム版のNetKitを併用する場合，それぞれのコンポーネントに渡すリダイレクトURLのポート番号を別々にすると良いでしょう。Microsoft Graph APIは，プラットフォームをWebに指定した場合，リダイレクトURLのポート番号をチェックしない仕様になっているため，設定とは違うポート番号でもリダイレクトURLを処理することができます。
 
+## ダウンロード
+
+カスタム版のNetKitは[こちら](https://github.com/miyako/4d-component-KMNetKit)に公開されています。
+
+---
+
 GmailをOAuthでトークン認証し，SMTPで送信するためには，`https://mail.google.com/`スコープのアクセス権を取得する必要があります。2020年以降，そのような[制限付きスコープ]((https://developers.google.com/terms/api-services-user-data-policy))の取得にはGoogleによるチェックが必要となりました。未確認のアプリは認証画面の前に警告メッセージが表示されます。リストを理解した上で続行することもできます。
 
 <img width="407" alt="" src="https://user-images.githubusercontent.com/1725068/187013750-c6aa8541-9199-4035-b9fb-33fc18e75c45.png">
